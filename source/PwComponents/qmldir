@@ -1,0 +1,18 @@
+module PwComponents
+AppToolBar 1.0 AppToolBar.qml
+AttachmentContainter 1.0 AttachmentContainter.qml
+Badge 1.0 Badge.qml
+Card 1.0 Card.qml
+CardTabBar 1.0 CardTabBar.qml
+FloatingActionButton 1.0 FloatingActionButton.qml
+FloatingExtraButton 1.0 FloatingExtraButton.qml
+DatePicker 1.0 DatePicker.qml
+TimePicker 1.0 TimePicker.qml
+JSONListModel 1.0 JSONListModel.qml
+ListViewEx 1.0 ListViewEx.qml
+PopupCheckBox 1.0 PopupCheckBox.qml
+PopupSelection 1.0 PopupSelection.qml
+MediaIoniconDelegate 1.0 MediaIoniconDelegate.qml
+CameraContainer 1.0 CameraContainer.qml
+CameraController 1.0 CameraController.qml
+QRScannerContainer 1.0 QRScannerContainer.qml

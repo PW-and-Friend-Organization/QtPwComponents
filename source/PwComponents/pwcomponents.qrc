@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/PwComponents">
+        <file>qmldir</file>
+        <file>Badge.qml</file>
+        <file>AppToolBar.qml</file>
+        <file>Card.qml</file>
+        <file>CardTabBar.qml</file>
+        <file>DatePicker.qml</file>
+        <file>TimePicker.qml</file>
+        <file>FloatingActionButton.qml</file>
+        <file>FloatingExtraButton.qml</file>
+        <file>JSONListModel.qml</file>
+        <file>jsonpath.js</file>
+        <file>ListViewEx.qml</file>
+        <file>PopupCheckBox.qml</file>
+        <file>PopupSelection.qml</file>
+        <file>MediaIoniconDelegate.qml</file>
+        <file>CameraContainer.qml</file>
+        <file>CameraController.qml</file>
+        <file>QRScannerContainer.qml</file>
+    </qresource>
+</RCC>
