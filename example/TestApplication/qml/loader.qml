@@ -57,6 +57,7 @@ ApplicationWindow {
 
     // websocket client used for development
     WebSocket {
+        onActiveChanged: console.log("ws: ", active)
         id: wsDebugServer
         url: __ws_debug
         active: __debug

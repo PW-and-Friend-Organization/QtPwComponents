@@ -10,9 +10,8 @@
   "author": "petar.koretic@qaap.io",
   "license": "MIT",
   "dependencies": {
-    "chokidar": "^1.6.0",
-    "finalhandler": "^0.5.0",
-    "serve-static": "^1.11.1",
-    "ws": "^1.1.1"
+    "express": "^4.16.3",
+    "lodash": "^4.17.5",
+    "ws": "^5.1.1"
   }
 }
