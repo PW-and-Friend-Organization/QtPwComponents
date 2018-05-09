@@ -4,6 +4,7 @@
 #include <QQmlPropertyMap>
 #include <QColor>
 #include <QZXing.h>
+#include "hotreload.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,7 +14,11 @@ int main(int argc, char *argv[])
     QZXing::registerQMLTypes();
 
     QQmlApplicationEngine engine;
+    HotReload hotReload(&engine);
     engine.addImportPath("qrc:/");
+
+    // expose C++ classes to QML
+    engine.rootContext()->setContextProperty("__hotReload", &hotReload);
 
     // create property for PwComponentTheme
     QQmlPropertyMap themeColor;
@@ -24,9 +29,13 @@ int main(int argc, char *argv[])
     themeColor.insert("inverseForegroundColor", QVariant(QColor("#FFF")));
     engine.rootContext()->setContextProperty("themeColor", &themeColor);
 
-    engine.load(QUrl(QLatin1String("qrc:/main.qml")));
-    if (engine.rootObjects().isEmpty())
-        return -1;
+    engine.load(QUrl(QLatin1String("qrc:/loader.qml")));
+
+#ifdef QT_DEBUG
+    engine.rootObjects().first()->setProperty("__debug", true);
+#else
+    engine.rootObjects().first()->setProperty("__debug", false);
+#endif
 
     return app.exec();
 }

@@ -14,7 +14,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += qml/qml.qrc
 
 include(../../source/qtpwcomponents.pri)
 include(../../../qzxing/src/QZXing.pri)
@@ -30,3 +30,6 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    hotreload.h

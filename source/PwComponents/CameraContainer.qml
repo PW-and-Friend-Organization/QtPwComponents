@@ -6,7 +6,6 @@ import "." as AppComponent
 
 Item {
     id: root
-    property ListModel model
 
     signal imageSaved(var imagePath)
     signal openImage(var imagePath)
@@ -28,7 +27,6 @@ Item {
 
             console.log("SaveImage", Qt.platform.os, imagePath)
             root.imageSaved(imagePath)
-            model.append({ path: imagePath, attachmentId: 0 })
         }
     }
 
