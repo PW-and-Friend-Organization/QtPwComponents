@@ -1,65 +1,90 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 import "qrc:/ionicons"
 
 ItemDelegate {
-    anchors.left: parent.left
-    anchors.right: parent.right
-    height: visible ? content.height + 10 : 0
+    signal itemClicked
+    signal metaIconClicked
+    property alias ioniconText: icon.source
+    property alias overlineText: overline.text
+    property alias metaStatusText: metaStatus.text
+    property alias metaIconText: metaIcon.source
+    property alias titleText: title.text
+    property alias descriptionText: description.text
 
-    property bool divider: true
-    property alias ionicon: icon.source
+    property alias icon: icon
+    property alias metaStatus: metaStatus
+    property alias metaIcon: metaIcon
+    property alias overline: overline
     property alias title: title
-    property alias desc: desc
-    property alias subDesc: subDesc
-    property alias flow: flow
-    property alias mouseArea: mouseArea
+    property alias description: description
+
+    width: ListView.view.width
+    height: description.visible || overline.visible ? 88 : 56
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: itemClicked()
+    }
 
     RowLayout {
-        id: content
-        width: parent.width
-        anchors.verticalCenter: parent.verticalCenter
-        spacing: 20
+        spacing: 16
+        anchors { verticalCenter: parent.verticalCenter; left: parent.left; right: parent.right; margins: 16 }
         Ionicon {
             id: icon
-            leftPadding: 10; anchors.top: parent.top; Layout.preferredWidth: 40
-            source: "person"; size: 40; color: themeColor.backgroudColorShade
+            anchors.top: parent.top; Layout.preferredWidth: 40
+            source: "android-contact"; size: 40; color: Material.foreground
         }
         Column {
             Layout.fillWidth: true
-            bottomPadding: 3
-            spacing: 3
             Label {
-                id: title
-                font.weight: Font.Normal
-                wrapMode: Label.WordWrap; width: parent.width; visible: text !== ""
+                id: overline
+                visible: text !== ""
+                font.capitalization: Font.AllUppercase
+                font.letterSpacing: 1.5
+                font.pointSize: defaultPointSize - 2
+                opacity: 0.7
+            }
+            RowLayout {
+                anchors { left: parent.left; right: parent.right }
+                Label {
+                    id: title
+                    text: model.name
+                    font.weight: Font.Medium; font.pointSize: defaultPointSize + 1
+                    Layout.fillWidth: true
+                }
+                Label {
+                    id: metaStatus
+                    Layout.preferredWidth: implicitWidth
+                    font.capitalization: Font.AllUppercase
+                    font.pointSize: defaultPointSize - 1
+                }
+                Ionicon {
+                    id: metaIcon
+                    visible: source !== ""
+                    Layout.preferredWidth: implicitWidth
+                    source: ""; size: 24; color: Material.foreground
+                    MouseArea {
+                        anchors { fill: parent; margins: -12 }
+                        onClicked: metaIconClicked()
+                    }
+                }
             }
             Label {
-                id: desc
-                font.weight: Font.Light; font.pointSize: defaultPointSize - 1
-                wrapMode: Label.WordWrap; width: parent.width; visible: text !== ""
+                id: description
+                text: model.text
+                wrapMode: Label.WordWrap; width: parent.width
+                opacity: 0.8
             }
-            Label {
-                id: subDesc
-                font.weight: Font.Light; font.pointSize: defaultPointSize - 1
-                wrapMode: Label.WordWrap; width: parent.width; visible: text !== ""
-            }
-            Flow { id: flow; width: parent.width; spacing: 5 }
         }
     }
 
     Rectangle {
-        anchors.left: parent.left
-        anchors.right: parent.right
+        width: parent.width; height: 1
         anchors.bottom: parent.bottom
-        height: 1
-        visible: divider
-        color: themeColor.backgroudColorShade
-    }
-
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
+        color: Material.foreground
+        opacity: 0.3
     }
 }

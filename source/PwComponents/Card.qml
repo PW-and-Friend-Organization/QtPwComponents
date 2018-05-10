@@ -1,4 +1,5 @@
 import QtQuick 2.9
+import QtQuick.Controls.Material 2.2
 import QtGraphicalEffects 1.0
 
 Item {
@@ -6,15 +7,16 @@ Item {
 
     RectangularGlow {
         anchors.fill: parent
-        spread: 0.05
-        glowRadius: 5
-        color: "black"
+        spread: 0.01
+        glowRadius: 8
+        color: Material.foreground
+        opacity: 0.3
     }
 
     Rectangle {
         id: rect
         anchors.fill: parent
         radius: 2
-        color: "#FFFFFF"
+        color: Material.background
     }
 }

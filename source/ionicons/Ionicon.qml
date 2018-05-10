@@ -4,7 +4,7 @@ import "ionicons.js" as Code
 
 Text {
     property string source: ""
-    property int size: 25
+    property int size: 24
     property alias style: text.style
 
     id: text
@@ -13,7 +13,6 @@ Text {
     height: size
     width: size
     text: Code.img[source] || ""
-    color: "#000"
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignHCenter
 }

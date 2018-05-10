@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtGraphicalEffects 1.0
 import "qrc:/ionicons"
 
@@ -22,7 +23,7 @@ Item {
         id: button
         anchors.fill: parent
         radius: width / 2
-        color: themeColor.primaryColor
+        color: Material.accent
     }
 
     Ionicon {
@@ -30,25 +31,25 @@ Item {
         z: 1
         anchors.centerIn: parent
         source: "plus-round"
-        color: themeColor.inverseForegroundColor
+        color: Material.background
     }
 
     MouseArea {
         id: mouseArea
         anchors.fill: button
         onClicked: root.clicked()
-        onPressed: shadow.radius = 3.0
+        onPressed: shadow.radius = 4.0
         onReleased: shadow.radius = 8.0
     }
 
     DropShadow {
         id: shadow
         anchors.fill: button
-        horizontalOffset: 3
         verticalOffset: 3
         radius: 8.0
-        samples: 17
-        color: "#80000000"
+        samples: 16
+        color: Material.foreground
+        opacity: 0.5
         source: button
 
         Behavior on radius { NumberAnimation { duration: 300; easing.type: Easing.InCubic } }

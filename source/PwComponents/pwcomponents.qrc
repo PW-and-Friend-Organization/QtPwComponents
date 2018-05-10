@@ -4,7 +4,6 @@
         <file>Badge.qml</file>
         <file>AppToolBar.qml</file>
         <file>Card.qml</file>
-        <file>CardTabBar.qml</file>
         <file>DatePicker.qml</file>
         <file>TimePicker.qml</file>
         <file>FloatingActionButton.qml</file>
@@ -18,5 +17,6 @@
         <file>CameraContainer.qml</file>
         <file>CameraController.qml</file>
         <file>QRScannerContainer.qml</file>
+        <file>Chip.qml</file>
     </qresource>
 </RCC>

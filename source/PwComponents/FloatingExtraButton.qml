@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtGraphicalEffects 1.0
 import "qrc:/ionicons"
 import "." as AppComponent
@@ -7,7 +8,7 @@ import "." as AppComponent
 Item {
     id: root
     anchors.fill: parent
-    property bool expand: false
+    property bool expand: true
 
     property alias model: repeater.model
     property alias button: mainBtn
@@ -15,7 +16,7 @@ Item {
 
     Rectangle {
         id: rect
-        color: themeColor.inverseForegroundColor
+        color: Material.background
         opacity: 0.9
         anchors.right: parent.right
         anchors.bottom: parent.bottom
@@ -48,7 +49,7 @@ Item {
                     anchors.right: undefined
                     icon.source: model.ionicon
                     icon.size: 20
-                    button.color: model.color || themeColor.primaryColor
+                    button.color: model.color || Material.accent
                     mouseArea.onClicked: {
                         expand = false
                         subClicked(model)
@@ -66,6 +67,56 @@ Item {
     AppComponent.FloatingActionButton {
         id: mainBtn
         mouseArea.onClicked: expand = !expand
+    }
+    Item {
+        width: 56
+        height: 56
+        z: 1
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        anchors.margins: 20
+
+        signal clicked()
+        property alias ionicon: icon.source
+        property alias icon: icon
+        property alias mouseArea: mouseArea
+        property alias button: button
+
+        Rectangle {
+            id: button
+            anchors.fill: parent
+            radius: width / 2
+            color: Material.accent
+        }
+
+        Ionicon {
+            id: icon
+            z: 1
+            anchors.centerIn: parent
+            source: "plus-round"
+            color: Material.background
+        }
+
+        MouseArea {
+            id: mouseArea
+            anchors.fill: button
+            onClicked: expand = !expand
+            onPressed: shadow.radius = 4.0
+            onReleased: shadow.radius = 8.0
+        }
+
+        DropShadow {
+            id: shadow
+            anchors.fill: button
+            verticalOffset: 3
+            radius: 8.0
+            samples: 16
+            color: Material.foreground
+            opacity: 0.5
+            source: button
+
+            Behavior on radius { NumberAnimation { duration: 300; easing.type: Easing.InCubic } }
+        }
     }
 
     states: [

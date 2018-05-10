@@ -1,8 +1,8 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtGraphicalEffects 1.0
 import "qrc:/ionicons"
-
 Item {
     anchors.fill: parent
 
@@ -19,7 +19,7 @@ Item {
         height: 80
         width: height
         radius: height / 2
-        border.color: themeColor.primaryColor
+        border.color: Material.primary
         border.width: 3
         color: "transparent"
 
@@ -28,7 +28,7 @@ Item {
             height: parent.height - 20
             width: height
             radius: height / 2
-            color: themeColor.primaryColor
+            color: Material.primary
         }
 
         MouseArea {
@@ -46,11 +46,11 @@ Item {
 
     DropShadow {
         anchors.fill: button
-        horizontalOffset: 3
         verticalOffset: 3
-        radius: 8.0
-        samples: 17
-        color: "#80FFFFFF"
+        radius: 12
+        samples: 12
+        color: Material.foreground
+        opacity: 0.5
         source: button
     }
 

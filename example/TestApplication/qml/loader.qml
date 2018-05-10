@@ -24,7 +24,14 @@ ApplicationWindow {
     signal intent(string action, var extras)
 
     // webfont icons | they have to be loaded before rest of qml
+    FontLoader { source: "qrc:/fonts/Roboto-Thin.ttf" }
+    FontLoader { source: "qrc:/fonts/Roboto-Light.ttf" }
+    FontLoader { source: "qrc:/fonts/Roboto-Regular.ttf" }
+    FontLoader { source: "qrc:/fonts/Roboto-Medium.ttf" }
+    FontLoader { source: "qrc:/fonts/Roboto-Bold.ttf" }
+    FontLoader { source: "qrc:/fonts/Roboto-Black.ttf" }
     FontLoader { source: "qrc:/ionicons/ionicons.ttf" }
+    font.family: "Roboto" // default font size
 
     // main application content
     // in debug mode fetched from http, in production, builtin version is used

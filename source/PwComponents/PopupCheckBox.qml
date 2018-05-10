@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import "." as AppComponent
 
 Popup {
@@ -9,6 +10,7 @@ Popup {
     property string title: ""
     signal itemChecked(var modelData)
 
+    Material.theme: parent.Material.theme
     x: (parent.width - contentWidth) / 2 - 10
     y: (parent.height - contentHeight) / 2 - 10
     leftPadding: 0

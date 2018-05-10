@@ -1,10 +1,16 @@
 // ekke (Ekkehard Gentz) @ekkescorner
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtQuick.Layouts 1.3
 
 Popup {
     id: timePicker
+
+    Material.theme: parent.Material.theme
+    Material.primary: parent.Material.primary
+    Material.accent: parent.Material.accent
+
     x: (parent.width - contentWidth) / 2
     y: (parent.height - contentHeight) / 2
     property date selectedTime: new Date()
@@ -38,7 +44,7 @@ Popup {
         Rectangle {
             width: parent.width
             height: display.height
-            color: themeColor.primaryColor
+            color: Material.accent
             Row {
                 id: display
                 anchors.right: parent.right
@@ -49,8 +55,8 @@ Popup {
                 Label {
                     id: hourLabel
                     text: hour
-                    color: themeColor.inverseForegroundColor
-                    font.pointSize: defaultPointSize + 4
+                    color: Material.background
+                    font.pointSize: defaultPointSize + 5
                     font.bold: hourView
                     MouseArea {
                         anchors.fill: parent
@@ -60,14 +66,14 @@ Popup {
                 Label {
                     anchors.bottom: hourLabel.bottom
                     text: ":"
-                    color: themeColor.inverseForegroundColor
-                    font.pointSize: defaultPointSize + 4
+                    color: Material.background
+                    font.pointSize: defaultPointSize + 5
                 }
                 Label {
                     anchors.bottom: hourLabel.bottom
                     text: minute < 10 ? "0" + minute : minute
-                    color: themeColor.inverseForegroundColor
-                    font.pointSize: defaultPointSize + 4
+                    color: Material.background
+                    font.pointSize: defaultPointSize + 5
                     font.bold: !hourView
                     MouseArea {
                         anchors.fill: parent
@@ -77,7 +83,7 @@ Popup {
                 Label {
                     anchors.bottom: hourLabel.bottom
                     text: am ? "AM" : "PM"
-                    color: themeColor.inverseForegroundColor
+                    color: Material.background
                     font.pointSize: defaultPointSize + 3
                     MouseArea {
                         anchors.fill: parent
@@ -95,6 +101,24 @@ Popup {
             property int center: width / 2
             property int offset: (width - margins * 2) / 2 - margins
 
+            Rectangle {
+                width: 8; height: 8; radius: 4
+                anchors.centerIn: parent
+                color: Material.foreground
+            }
+
+            Rectangle {
+                id: highlight
+                radius: 20; width: 40; height: 40
+                color: Material.accent
+                opacity: 0.4
+
+                function setIndex(index) {
+                    x = computeX(index - 1, width)
+                    y = computeY(index - 1, height)
+                }
+            }
+
             // 1.0472 = -60 degree so that 0 is start at 1 o clock
             // 0.523599 = step number 30 degress
             Repeater {
@@ -104,18 +128,6 @@ Popup {
                     y: computeY(index, contentHeight)
                     text: hourView ? index + 1 : (index < 11 ? (index + 1) * 5 : 0)
                     font.pointSize: clockTextSize
-                }
-            }
-
-            Rectangle {
-                id: highlight
-                radius: 20; width: 40; height: 40
-                color: themeColor.primaryColor
-                opacity: 0.4
-
-                function setIndex(index) {
-                    x = computeX(index - 1, width)
-                    y = computeY(index - 1, height)
                 }
             }
 
@@ -146,6 +158,7 @@ Popup {
                     hour = Math.round(index)
                 }
                 else {
+                    index = Math.round(index * 5) / 5
                     highlight.x = computeX(index - 1, highlight.width)
                     highlight.y = computeY(index - 1, highlight.height)
                     minute = Math.floor(index * 5)

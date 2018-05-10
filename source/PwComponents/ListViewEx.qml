@@ -1,5 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import QtGraphicalEffects 1.0
 import "qrc:/ionicons"
 
@@ -36,12 +37,13 @@ ListView {
             anchors.leftMargin: -10
             anchors.rightMargin: -10
             radius: height / 2
+            color: Material.background
             layer.enabled: true
             layer.effect: DropShadow {
                 radius: 2
-                samples: radius * 2
+                samples: 12
                 verticalOffset: 1
-                color: "grey"
+                color: Material.foreground
             }
 
         }
@@ -56,6 +58,7 @@ ListView {
             Ionicon {
                 id: arrow
                 source: "refresh"
+                color: Material.foreground
                 transformOrigin: Item.Center
                 Behavior on rotation { NumberAnimation { duration: 500 } }
             }
