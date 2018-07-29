@@ -17,6 +17,7 @@ ApplicationWindow {
     property bool __debug: false
     property string __ws_host: "http://127.0.0.1:44333"
     property string __ws_debug: "ws://127.0.0.1:44334"
+    property string __device: Math.min(width, height) < 600 ? "handset" : "tablet"
     property bool __landscape: Screen.orientation === Qt.LandscapeOrientation
     property int defaultPointSize: font.pointSize
 
