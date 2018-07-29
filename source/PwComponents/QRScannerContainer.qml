@@ -30,7 +30,7 @@ Item {
             origin.x: videoOutput.width / 2;
             origin.y: videoOutput.height / 2;
             axis.x:0; axis.y:1; axis.z:0
-            angle: 180 // Qt.platform.os === "android" ? 180 : 0
+            angle: Qt.platform.os === "android" ? 0 : 180
         }
         Rectangle {
             id: captureZone
@@ -56,10 +56,10 @@ Item {
         id: zxingFilter
         captureRect: {
             // setup bindings
-            videoOutput.contentRect;
-            videoOutput.sourceRect;
-            return videoOutput.mapRectToSource(videoOutput.mapNormalizedRectToItem(Qt.rect(
-                0.15, 0.15, 0.7, 0.7
+            // videoOutput.contentRect = captureZone;
+            // videoOutput.sourceRect;
+            return videoOutput.mapRectToSource(captureZone.mapNormalizedRectToItem(Qt.rect(
+                0, 0, 1, 1
             )));
         }
 

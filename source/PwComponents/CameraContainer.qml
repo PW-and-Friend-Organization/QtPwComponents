@@ -42,7 +42,7 @@ Item {
             origin.x: videoOutput.width / 2;
             origin.y: videoOutput.height / 2;
             axis.x:0; axis.y:1; axis.z:0
-            angle: 180 // Qt.platform.os === "android" ? 180 : 0
+            angle: Qt.platform.os === "android" ? 0 : 180
         }
     }
 
