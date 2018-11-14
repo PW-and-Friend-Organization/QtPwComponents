@@ -14,6 +14,7 @@ JSONListModel 1.0 JSONListModel.qml
 ListViewEx 1.0 ListViewEx.qml
 PopupCheckBox 1.0 PopupCheckBox.qml
 PopupSelection 1.0 PopupSelection.qml
+PopupConfirmation 1.0 PopupConfirmation.qml
 MediaIoniconDelegate 1.0 MediaIoniconDelegate.qml
 CameraContainer 1.0 CameraContainer.qml
 CameraController 1.0 CameraController.qml
