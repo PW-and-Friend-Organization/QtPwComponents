@@ -40,7 +40,7 @@ Open the `example\TestApplication\TestApplication.pro`.
 
 ## Theme
 
-![](doc-image/Theme-Dark.png) ![](doc-image/Theme-Light.png)
+![](doc-image/Theme-Dark.png | width=150) ![](doc-image/Theme-Light.png | width=150)
 
 ```
 Page {
