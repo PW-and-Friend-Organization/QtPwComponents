@@ -40,7 +40,7 @@ Open the `example\TestApplication\TestApplication.pro`.
 
 ## Theme
 
-![](doc-image/Theme-Dark.png) ![](doc-image/Theme-Light.png)
+![](doc-image/Theme-Light.png) ![](doc-image/Theme-Dark.png)
 
 ```
 Page {
@@ -53,6 +53,8 @@ Page {
 
 ### Badge
 
+![](doc-image/Badge-Light.png) ![](doc-image/Badge-Dark.png)
+
 ```
 AppComponent.Badge {
     text: "This is badge"
@@ -60,6 +62,8 @@ AppComponent.Badge {
 ```
 
 ### Card
+
+![](doc-image/Card-Light.png) ![](doc-image/Card-Dark.png)
 
 ```
 AppComponent.Card {
@@ -74,6 +78,8 @@ AppComponent.Card {
 
 ### Chip
 
+![](doc-image/Chip-Light.png) ![](doc-image/Chip-Dark.png)
+
 ```
 AppComponent.Chip {
     iconText: "person"
@@ -84,6 +90,8 @@ AppComponent.Chip {
 
 ### ComboBox
 
+![](doc-image/Combo-Light.png) ![](doc-image/Combo-Dark.png)
+
 ```
 AppComponent.ComboBox {
     model: ["Apple", "Banana", "Carrot"]
@@ -91,6 +99,8 @@ AppComponent.ComboBox {
 ```
 
 ### DatePicker
+
+![](doc-image/DatePicker-Light.png) ![](doc-image/DatePicker-Dark.png)
 
 ```
 AppComponent.DatePicker {
@@ -101,6 +111,8 @@ AppComponent.DatePicker {
 
 ### TimePicker
 
+![](doc-image/TimePicker-Light.png) ![](doc-image/TimePicker-Dark.png)
+
 ```
 AppComponent.TimePicker {
     selectedTime: new Date("2020-01-01 08:30:00")
@@ -110,6 +122,8 @@ AppComponent.TimePicker {
 
 ### FloatingActionButton
 
+![](doc-image/FloatingActionButton-Light.png) ![](doc-image/FloatingActionButton-Dark.png)
+
 ```
 AppComponent.FloatingActionButton {
     ionicon: "code"
@@ -117,6 +131,8 @@ AppComponent.FloatingActionButton {
 ```
 
 ### FloatingExtraButton
+
+![](doc-image/FloatingExtraButton-Light.png) ![](doc-image/FloatingExtraButton-Dark.png)
 
 ```
 AppComponent.FloatingExtraButton {
@@ -138,6 +154,8 @@ AppComponent.FloatingExtraButton {
 
 ### IconButton
 
+![](doc-image/IconButton-Light.png)
+
 ```
 AppComponent.IconButton {
     anchors.centerIn: parent
@@ -146,6 +164,8 @@ AppComponent.IconButton {
 ```
 
 ### ListViewEx
+
+![](doc-image/ListViewEx-Light.png)
 
 ```
 AppComponent.ListViewEx {
@@ -160,6 +180,8 @@ AppComponent.ListViewEx {
 ```
 
 ### MediaIoniconDelegate
+
+![](doc-image/MediaIoniconDelegate-Light.png)
 
 ```
 AppComponent.ListViewEx {
@@ -178,6 +200,8 @@ AppComponent.ListViewEx {
 
 ### PopupCheckBox
 
+![](doc-image/PopupCheckBox-Light.png) ![](doc-image/PopupCheckBox-Dark.png)
+
 ```
 AppComponent.PopupCheckBox {
     title: "Fruit"
@@ -189,6 +213,8 @@ AppComponent.PopupCheckBox {
 
 ### PopupSelection
 
+![](doc-image/PopupSelection-Light.png) ![](doc-image/PopupSelection-Dark.png)
+
 ```
 AppComponent.PopupSelection {
     title: "Fruit"
@@ -198,6 +224,8 @@ AppComponent.PopupSelection {
 ```
 
 ### PopupConfirmation
+
+![](doc-image/PopupConfirmation-Light.png) ![](doc-image/PopupConfirmation-Dark.png)
 
 ```
 AppComponent.PopupConfirmation {
@@ -210,6 +238,8 @@ AppComponent.PopupConfirmation {
 ```
 
 ### QRScannerContainer
+
+![](doc-image/QRScannerContainer-Light.png)
 
 ```
 AppComponent.QRScannerContainer {
