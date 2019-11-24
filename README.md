@@ -239,7 +239,7 @@ AppComponent.PopupConfirmation {
 
 ### QRScannerContainer
 
-![](doc-image/QRScannerContainer-Light.png)
+![](doc-image/QRScannerContainer.png)
 
 ```
 AppComponent.QRScannerContainer {
