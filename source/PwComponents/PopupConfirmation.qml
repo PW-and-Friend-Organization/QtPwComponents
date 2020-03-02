@@ -29,14 +29,14 @@ Popup {
             width: parent.width
             wrapMode: Text.WordWrap
             font.weight: Font.Normal; font.pointSize: defaultPointSize + 6
-            text: title
+            // text: title
         }
         Label {
             id: desc
             font.weight: Font.Thin; font.pointSize: defaultPointSize + 3
             width: parent.width
             wrapMode: Text.WordWrap
-            text: desc
+            // text: desc
         }
         Row {
             anchors.right: parent.right

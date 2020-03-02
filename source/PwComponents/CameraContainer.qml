@@ -38,12 +38,12 @@ Item {
         height: parent.height
         autoOrientation: true
         fillMode: VideoOutput.PreserveAspectCrop
-        transform: Rotation { // bugfix, until update Qt5.9.4 or 5.10
-            origin.x: videoOutput.width / 2;
-            origin.y: videoOutput.height / 2;
-            axis.x:0; axis.y:1; axis.z:0
-            angle: Qt.platform.os === "android" ? 0 : 180
-        }
+//        transform: Rotation { // bugfix, until update Qt5.9.4 or 5.10
+//            origin.x: videoOutput.width / 2;
+//            origin.y: videoOutput.height / 2;
+//            axis.x:0; axis.y:1; axis.z:0
+//            angle: Qt.platform.os === "android" ? 0 : 180
+//        }
     }
 
     MouseArea {
